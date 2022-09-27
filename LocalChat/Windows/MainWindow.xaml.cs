@@ -19,9 +19,14 @@ namespace LocalChat.Windows
     /// </summary>
     public partial class MainWindow : Window
     {
+
         public MainWindow()
         {
+            
             InitializeComponent();
+            List<EF.User> users = new List<EF.User>();
+            users = Classes.Class1.Context.User.ToList();
+            lvUsers.ItemsSource = users;
         }
 
         private void Border_MouseDown(object sender, MouseButtonEventArgs e)
@@ -34,24 +39,46 @@ namespace LocalChat.Windows
 
         private void ButtonMinimaze_Click(object sender, RoutedEventArgs e)
         {
-            Application.Current.MainWindow.WindowState = WindowState.Minimized;
+            this.WindowState = WindowState.Minimized;
         }
 
         private void ButtonMaximazed_Click(object sender, RoutedEventArgs e)
         {
-            if (Application.Current.MainWindow.WindowState != WindowState.Maximized)
+            if (this.WindowState != WindowState.Maximized)
             {
-                Application.Current.MainWindow.WindowState = WindowState.Maximized;
+                this.WindowState = WindowState.Maximized;
+                this.ResizeMode = ResizeMode.NoResize;
             }
             else
             {
-                Application.Current.MainWindow.WindowState = WindowState.Normal;
+                this.WindowState = WindowState.Normal;
             }
         }
 
         private void ButtonClose_Click(object sender, RoutedEventArgs e)
         {
             Application.Current.Shutdown();
+        }
+
+        private void lvUsers_KeyDown(object sender, KeyEventArgs e)
+        {
+
+        }
+
+        private void lvUsers_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            var smth = (lvUsers.SelectedItem as EF.User);
+
+            var userD = smth.ID;
+            List<EF.User> UserSelected = new List<EF.User>();
+            List<EF.ChatUser> ChatUserSelected = new List<EF.ChatUser>();
+            List<EF.Chat> ChatSelected = new List<EF.Chat>();
+            List<EF.Message> MessageSselected = new List<EF.Message>();
+            var chatuser1 = ChatUserSelected.Where(i =>
+            i.IDUser == userD).ToList();
+            lvChat.ItemsSource = chatuser1;
+            //var chat13 = MessageSselected.Where(i => i.IDChat == (chat1)).ToList();
+            //var allMessages = MessageSselected.Where(i => i.IDChat == (chat1)).ToList();
         }
     }
 }

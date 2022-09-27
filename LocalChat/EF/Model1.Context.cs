@@ -25,6 +25,9 @@ namespace LocalChat.EF
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<Chat> Chat { get; set; }
+        public virtual DbSet<ChatUser> ChatUser { get; set; }
+        public virtual DbSet<Message> Message { get; set; }
         public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<User> User { get; set; }
     }

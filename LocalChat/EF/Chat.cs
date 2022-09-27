@@ -12,20 +12,17 @@ namespace LocalChat.EF
     using System;
     using System.Collections.Generic;
     
-    public partial class User
+    public partial class Chat
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public User()
+        public Chat()
         {
             this.ChatUser = new HashSet<ChatUser>();
             this.Message = new HashSet<Message>();
         }
     
         public int ID { get; set; }
-        public string Nickname { get; set; }
-        public bool OnlineStatus { get; set; }
-        public string MainPhotoPath { get; set; }
-        public string LastMessage { get; set; }
+        public string Title { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ChatUser> ChatUser { get; set; }

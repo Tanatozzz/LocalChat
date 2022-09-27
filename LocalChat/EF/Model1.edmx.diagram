@@ -5,8 +5,15 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="fe18ed0c6c88441f9c9ed65a19522d83" Name="Diagram1">
-        <EntityTypeShape EntityType="LiveChatModel.sysdiagrams" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="LiveChatModel.User" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LiveChatModel.Chat" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="LiveChatModel.ChatUser" Width="1.5" PointX="3" PointY="3.625" />
+        <EntityTypeShape EntityType="LiveChatModel.Message" Width="1.5" PointX="6" PointY="3.25" />
+        <EntityTypeShape EntityType="LiveChatModel.sysdiagrams" Width="1.5" PointX="2.75" PointY="6.5" />
+        <EntityTypeShape EntityType="LiveChatModel.User" Width="1.5" PointX="0.75" PointY="3.5" />
+        <AssociationConnector Association="LiveChatModel.FK_ChatUser_Chat" />
+        <AssociationConnector Association="LiveChatModel.FK_Message_Chat" />
+        <AssociationConnector Association="LiveChatModel.FK_ChatUser_User" />
+        <AssociationConnector Association="LiveChatModel.FK_Message_User" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

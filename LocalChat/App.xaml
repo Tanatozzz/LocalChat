@@ -4,6 +4,11 @@
              xmlns:local="clr-namespace:LocalChat"
              StartupUri="Windows\LoginWindow.xaml">
     <Application.Resources>
-         
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="./Themes/Contacts.xaml"/>
+                <ResourceDictionary Source="./Themes/ChatItem.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
     </Application.Resources>
 </Application>
