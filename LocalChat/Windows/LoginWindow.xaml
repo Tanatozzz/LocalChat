@@ -5,20 +5,47 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:LocalChat"
         mc:Ignorable="d"
-        Title="Авторизация" Height="450" Width="400" WindowStartupLocation="CenterScreen">
+        Title="Авторизация" Height="450" Width="400" WindowStartupLocation="CenterScreen" AllowsTransparency="True" Background="#36393F" WindowStyle="None" ResizeMode="CanResizeWithGrip">
     <Grid Background="#36393F">
-        
-        <Grid.RowDefinitions>
-            <RowDefinition Height="250"/>
-            <RowDefinition Height="50"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
 
-        <Image Source="\Images\user.png" Width="175"/>
-        <Button Grid.Row="1" Width="100" Height="20" Content="Обзор..."/>
-        <Button Grid.Row="3" Width="100" Height="20" Content="Войти" Click="Button_Click"/>
-        <TextBox Grid.Row="2" Width="175" Height="30" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25"/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Border Grid.ColumnSpan="2" Background="#252525" MouseDown="Border_MouseDown">
+            <Grid HorizontalAlignment="Stretch">
+                <Label Content="LocalChat ZAVOD"
+                       Foreground="Gray"
+                       FontStyle="Italic"
+                    />
+                <StackPanel HorizontalAlignment="Right" Orientation="Horizontal">
+                    <Button Width="20" Height="20" Background="Transparent" Content="_"
+                            Foreground="Gray" BorderThickness="0" FontWeight="Bold" 
+                            Margin="0 0 0 2" Click="ButtonMinimaze_Click"/>
+                    <Button Width="20" Height="20" Background="Transparent" Content="◻"
+                            Foreground="Gray" FontSize="15" BorderThickness="0" Click="ButtonMaximazed_Click"
+                            FontWeight="Bold" VerticalContentAlignment="Center" Margin="0 0 0 2"/>
+                    <Button Width="20" Height="20" Background="Transparent" Content="✕"
+                            Foreground="Gray" BorderThickness="0" FontWeight="Bold" Click="ButtonClose_Click"/>
+                </StackPanel>
+
+
+
+            </Grid>
+        </Border>
+
+        <Image Source="\Images\user.png" Grid.Row="1" Width="175"/>
+        <Button Grid.Row="1" Width="100" Height="20" 
+                Content="Обзор..." VerticalAlignment="Center" 
+                Grid.RowSpan="2" Margin="0 10 0 0"/>
+        <Button Grid.Row="3" Width="100" 
+                Height="20" Content="Войти"
+                Click="Button_Click" VerticalAlignment="Bottom"/>
+        <TextBox x:Name="txtLog" Grid.Row="2" Width="175" Height="30" 
+                 HorizontalContentAlignment="Center" 
+                 VerticalContentAlignment="Center"/>
         
         
         

@@ -28,7 +28,7 @@
           <Property Name="Text" Type="nvarchar" MaxLength="250" Nullable="false" />
           <Property Name="Photo" Type="varbinary(max)" />
           <Property Name="IsDeleted" Type="bit" Nullable="false" />
-          <Property Name="IDUser" Type="int" Nullable="false" />
+          <Property Name="IDSender" Type="int" Nullable="false" />
           <Property Name="IDChat" Type="int" Nullable="false" />
           <Property Name="TimeSend" Type="datetime" Nullable="false" />
         </EntityType>
@@ -96,7 +96,7 @@
               <PropertyRef Name="ID" />
             </Principal>
             <Dependent Role="Message">
-              <PropertyRef Name="IDUser" />
+              <PropertyRef Name="IDSender" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -177,7 +177,7 @@
           <Property Name="Text" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
           <Property Name="Photo" Type="Binary" MaxLength="Max" FixedLength="false" />
           <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
-          <Property Name="IDUser" Type="Int32" Nullable="false" />
+          <Property Name="IDSender" Type="Int32" Nullable="false" />
           <Property Name="IDChat" Type="Int32" Nullable="false" />
           <Property Name="TimeSend" Type="DateTime" Nullable="false" Precision="3" />
           <NavigationProperty Name="Chat" Relationship="LiveChatModel.FK_Message_Chat" FromRole="Message" ToRole="Chat" />
@@ -249,11 +249,11 @@
               <PropertyRef Name="ID" />
             </Principal>
             <Dependent Role="Message">
-              <PropertyRef Name="IDUser" />
+              <PropertyRef Name="IDSender" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-      </Schema>
+        </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
@@ -281,7 +281,7 @@
               <MappingFragment StoreEntitySet="Message">
                 <ScalarProperty Name="TimeSend" ColumnName="TimeSend" />
                 <ScalarProperty Name="IDChat" ColumnName="IDChat" />
-                <ScalarProperty Name="IDUser" ColumnName="IDUser" />
+                <ScalarProperty Name="IDSender" ColumnName="IDSender" />
                 <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
                 <ScalarProperty Name="Photo" ColumnName="Photo" />
                 <ScalarProperty Name="Text" ColumnName="Text" />
