@@ -82,7 +82,14 @@
 
                 </Grid>
             </Border>
-            <ListView x:Name="lvChat" Grid.Row="1"/>
+
+
+            <ListView x:Name="lvChat"
+                  Grid.Row="1"
+                  Grid.Column="1"
+                  ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                  >
+            </ListView>
         </Grid>
     </Grid>
 </Window>

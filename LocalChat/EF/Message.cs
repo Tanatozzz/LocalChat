@@ -18,7 +18,7 @@ namespace LocalChat.EF
         public string Text { get; set; }
         public byte[] Photo { get; set; }
         public bool IsDeleted { get; set; }
-        public int IDUser { get; set; }
+        public int IDSender { get; set; }
         public int IDChat { get; set; }
         public System.DateTime TimeSend { get; set; }
     
