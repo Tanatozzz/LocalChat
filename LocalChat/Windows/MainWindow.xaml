@@ -78,7 +78,7 @@
                     <Image Width="20" Height="20"
                                    RenderOptions.BitmapScalingMode="Fant"
                                    Margin="5,0,5,0"
-                                   Source="\Images/user.png"/>
+                                   Source="/Images/user.png"/>
 
                 </Grid>
             </Border>
